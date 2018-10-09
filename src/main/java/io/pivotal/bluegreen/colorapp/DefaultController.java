@@ -9,8 +9,18 @@ public class DefaultController {
 
     @GetMapping("/")
     public String getDefaultPage(Model model){
-        model.addAttribute("version", "1");
-        model.addAttribute("bgcolor", "blue");
+        model.addAttribute("version", "2");
+        model.addAttribute("bgcolor", "green");
         return "index";
+    }
+
+    @GetMapping("/errors/throw")
+    public String getThrow(){
+        throw new RuntimeException("This is a test");
+    }
+
+    @GetMapping("/errors/kill")
+    public void getKill(){
+        System.exit(-1);
     }
 }
