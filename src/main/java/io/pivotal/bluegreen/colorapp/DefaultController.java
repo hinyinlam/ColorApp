@@ -1,5 +1,7 @@
 package io.pivotal.bluegreen.colorapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,10 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DefaultController {
 
+    @Autowired
+    Environment env;
+
     @GetMapping("/")
     public String getDefaultPage(Model model){
-        model.addAttribute("version", "2");
-        model.addAttribute("bgcolor", "green");
+        model.addAttribute("version", "1");
+        model.addAttribute("bgcolor", "blue");
+        model.addAttribute("instanceid", env.getProperty("CF_INSTANCE_INDEX"));
         return "index";
     }
 

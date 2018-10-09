@@ -18,9 +18,9 @@ public class ScaleController {
     public String loadtest() {
         logger.info("Forcing application to run CPU intensive work");
         for (int thread = 0; thread < 10; thread++) {
-            new BusyThread("Thread" + thread, 0.8,  3000000).start();
+            new BusyThread("Thread" + thread, 0.8,  60000).start();
         }
-        return "It is generating load now, please visit AppManager";
+        return "It is generating load now, please visit AppManager for AutoScaling settings";
     }
 
 }
