@@ -25,14 +25,22 @@ cf push blueapp -p colorapp-0.0.3-SNAPSHOT-green.jar --hostname colorapp
 
 #### Demo Self healing
 ```/errors/throw```
-and 
+
+Will throws an uncaught exception
+
 ```/errors/kill```
+
+Will crash the apps and then Cloudfoundry will recovery
 
 #### Demo AutoScaling using Latency as a metric
 ```/latency/{seconds}```
 
 For example, I want to have the current request taking 2 seconds:
 ```/latency/2```
+
+#### Generate high CPU load
+```/loadtest```
+
 
 ## Remote Debug
 
