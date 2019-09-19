@@ -5,9 +5,6 @@ ColorApp is a simple Java application that show Color in 2 version:
 - Green
 
 See releases for the Jar file.
-
-
-##README NOT DONE YET 
  
 ### How to demo Blue-Green deployment:
 
@@ -24,9 +21,18 @@ Visit the app's URL, it should look like this:
 cf push blueapp -p colorapp-0.0.3-SNAPSHOT-green.jar --hostname colorapp
 ```
 
-## Demo Self healing
+### What endpoints are available? ###
 
-## Demo AutoScaling using Latency as a metric
+#### Demo Self healing
+```/errors/throw```
+and 
+```/errors/kill```
+
+#### Demo AutoScaling using Latency as a metric
+```/latency/{seconds}```
+
+For example, I want to have the current request taking 2 seconds:
+```/latency/2```
 
 ## Remote Debug
 
