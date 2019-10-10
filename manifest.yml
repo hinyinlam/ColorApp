@@ -1,10 +1,11 @@
 ---
 applications:
-  - name: colorapp
-  
+  - name: colorapp-blue
     memory: 1G
     instances: 1
     path: ./colorapp-0.0.4-SNAPSHOT-blue.jar
-    #path: ./colorapp-0.0.4-SNAPSHOT-green.jar
+    routes:
+    - route: colorapp-blue.cfapps.io
     env:
       JBP_CONFIG_DEBUG: '{enabled: true}'
+
