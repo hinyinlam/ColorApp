@@ -1,11 +1,23 @@
 <html>
 <head>
 
+    <style>
+        a { color: white; } /* CSS link color */
+    </style>
 </head>
 <body th:bgcolor="${bgcolor}">
 
 <h1 style="text-align: center; color: darkorange">This is version: <span th:text="${version}"/> </h1>
 
 <h2>My instance ID: <span th:text="${instanceid}"/></h2>
+
+<hr/>
+<h3>This demo app function list:</h3>
+<ul>
+    <li><a href="/actuator">Actuator</a> </li>
+    <li><a href="/latency/2">Generate latency - 2 Sec</a></li>
+    <li><a href="/errors/throw">Error - Throw</a> </li>
+    <li><a href="/errors/kill">Error - Kill</a> </li>
+</ul>
 </body>
 </html>
