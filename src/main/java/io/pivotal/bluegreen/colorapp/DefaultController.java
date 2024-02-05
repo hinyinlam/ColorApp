@@ -14,9 +14,8 @@ public class DefaultController {
 
     @GetMapping("/")
     public String getDefaultPage(Model model){
-        model.addAttribute("version", "1");
-        //model.addAttribute("bgcolor", "blue");
-        model.addAttribute("bgcolor", "green");
+        model.addAttribute("version", env.getProperty("colorapp.display.version","N/A"));
+        model.addAttribute("bgcolor", env.getProperty("colorapp.display.bgcolor","white"));
         model.addAttribute("instanceid", env.getProperty("CF_INSTANCE_INDEX"));
         return "index";
     }

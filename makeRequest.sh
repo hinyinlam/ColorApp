@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COLORAPPURL=https://colorapptest.cfapps.io
+COLORAPPURL=https://colorapp.apps.hinlam.com
 #Comment out for your need
 
 
