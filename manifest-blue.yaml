@@ -1,0 +1,14 @@
+---
+applications:
+  - name: colorapp-blue
+    memory: 1G
+    instances: 1
+    path: ./colorapp-0.0.5-SNAPSHOT-blue.jar
+    routes:
+    - route: colorapp-blue.apps.hinlam.com
+    buildpacks:
+      - https://github.com/cloudfoundry/java-buildpack.git#v4.65.0
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
+        # JBP_CONFIG_DEBUG: '{enabled: true}'
+
